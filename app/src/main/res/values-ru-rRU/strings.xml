@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TravelerCompanion</string>
+    <string name="hello_world">Добро пожаловать!</string>
+    <string name="back">Назад</string>
+    <string name="phone_number">Введите номер телефона</string>
+    <string name="page_up">Наверх</string>
+    <string name="page_down">Вниз</string>
+    <string name="home">Личный Кабинет</string>
+    <string name="map">Карта</string>
+    <string name="guids">Гиды</string>
+</resources>

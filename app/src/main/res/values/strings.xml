@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TravelerCompanion</string>
+    <string name="hello_world">Welcome</string>
+    <string name="back">Back</string>
+    <string name="phone_number">Write yout Phone number</string>
+    <string name="page_up">page up</string>
+    <string name="page_down">page down</string>
+    <string name="home">Home</string>
+    <string name="map">Map</string>
+    <string name="guids">guids</string>
+</resources>
