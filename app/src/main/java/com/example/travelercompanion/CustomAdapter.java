@@ -34,12 +34,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         return customViewHolder;
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder customViewHolder, int i) {
         customViewHolder.name.setText(models.get(i).name);
         customViewHolder.detail.setText(models.get(i).about);
 
-        customViewHolder.detail.setOnClickListener(clickListener);
+        customViewHolder.name.setOnClickListener(clickListener);
 
        // Glide.with(context)
              //   .load(models.get(i).imageUrl)

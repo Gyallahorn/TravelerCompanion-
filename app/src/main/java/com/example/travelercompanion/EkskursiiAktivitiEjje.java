@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Gids<NewThread> extends Activity  {
+public class EkskursiiAktivitiEjje<NewThread> extends Activity  {
 
 ;
 
@@ -54,23 +54,21 @@ public class Gids<NewThread> extends Activity  {
 
 
         new Thread(new Runnable() {
-            Element element1;
-
-            @Override
+       @Override
             public void run() {
                 Document doc = null;
                 try {
                     int i = 0;
-                    doc = Jsoup.connect("https://www.sputnik8.com/ru/st-petersburg/private-guides?source=google&medium=cpc&campaign=Dynamic_Search_Ads_SPb|359253650&keyword=&campaign_id=359253650&gbid=23165394410&adid=82222829690&banid=82222829690&kwid=dsa-183666774050&pos=1t3&matchtype=b&srct=g&src=&devt=c&p1=zagolovok&p2=&agency&gclid=CjwKCAjwkcblBRB_EiwAFmfyyyytjk4JGXiK37VG0XRUS-7sBvFG3DMSoguMiPekKg6miRBOZB0pmhoCSX8QAvD_BwE").get();
-                    contents = doc.select("div.col-12.col-md-6.col-lg-4");
+                    doc = Jsoup.connect("https://www.sputnik8.com/ru/st-petersburg").get();
+                    contents = doc.select("div.activity-card.js-activity-card");
                     for (Element element : contents) {
-                        String name = element.select("a.activity-guide__text.activity-guide__text_name.activity-guide__text_name-fullwidth").text();
-                        String bio = element.select("div.activity-guide__text.activity-guide__text_tiny").text();
-                        String about = element.select("div.activity-guide__text.activity-guide__text_message.block_mob-hidden").text();
-                        final String href = element.select("a").first().absUrl("href");
-                        GidModel gidModel = new GidModel(String.valueOf(i), name, about, bio, href);
+                        String name = element.select("div.activity-card__title").text();
+                        String bio = element.select("div.activity-card__description").text();
+                        String about = element.select("span.future-first-event.today").text();
+                       // final String href = element.select("a").first().absUrl("href");
+                        GidModel gidModel = new GidModel(String.valueOf(i), name, about, bio);
                         gidsList.add(gidModel);
-                        if (gidsList.size() == 11) {
+                        if (gidsList.size() ==11) {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -79,7 +77,7 @@ public class Gids<NewThread> extends Activity  {
                                         @Override
                                         public void onClick(View v) {
                                             Intent intent = new Intent(getApplicationContext(), gid_details.class);
-                                            intent.putExtra(Intent.EXTRA_TEXT, href);
+                                            //intent.putExtra(Intent.EXTRA_TEXT, href);
                                             startActivity(intent);
                                         }
                                     });

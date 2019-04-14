@@ -1,28 +1,11 @@
 package com.example.travelercompanion;
 
-import android.content.ClipData;
 import android.content.Intent;
-import android.support.annotation.IntegerRes;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button mButton1,mButton2,mButton3,mButton4;
@@ -48,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.button2:
-                Intent intent2 = new Intent(this,Gids.class);
+                Intent intent2 = new Intent(this, EkskursiiAktivitiEjje.class);
                 startActivity(intent2);
                 break;
             case R.id.button3:

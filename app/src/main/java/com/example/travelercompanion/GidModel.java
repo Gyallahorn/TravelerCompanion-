@@ -10,11 +10,11 @@ public class GidModel {
     public String href;
  //   public final String imageUrl;
 
-    public GidModel(String s, String name, String about, String bio, String href){
+    public GidModel(String s, String name, String about, String bio){
         this.name=name;
         this.about=about;
         this.bio=bio;
-        this.href=href;
+       // this.href=href;
     //    this.imageUrl = imageUrl;
     }
 
@@ -30,11 +30,11 @@ public class GidModel {
         return bio;
     }
 
-    public String getHref() {
-        return href;
+  //  public String getHref() {
+     //   return href;
 
 
-    }
+   // }
 
 
     //public String getImageUrl() {
